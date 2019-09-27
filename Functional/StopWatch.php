@@ -19,10 +19,11 @@ class StopWatch{
         date_default_timezone_set("Asia/Kolkata");
         //print start time 
         echo "Start time:".date("H:i:s");
+        $hour = (int)date("H");
         $min = (int)date("i");
         $sec = (int)date("s");
         //put current time in $start 
-        $this->start=($min+$sec/60);
+        $this->start=($hour*60+$min+$sec/60);
 
     }
     //function to get stop time
@@ -31,10 +32,11 @@ class StopWatch{
         date_default_timezone_set("Asia/Kolkata");
         //print stop time
         echo "Stop time:".date("H:i:s");
+        $hour = (int)date("H");
         $min = (int)date("i");
         $sec = (int)date("s");
         //put current time in $stop 
-        $this->stop=($min+$sec/60);
+        $this->stop=($hour*60+$min+$sec/60);
 
     }
     //function to get elapsed time

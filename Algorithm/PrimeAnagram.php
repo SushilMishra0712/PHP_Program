@@ -8,13 +8,13 @@ class PrimeAnagram{
         //for loop from $first to $last number
         for($i=$first;$i<$last;$i++){
             //prime number call from util class for $i
-            $Prime_responce = Util::prime($i);
+            $Prime_response = Util::prime($i);
             //reverse the number $i
             $rev=strrev($i); 
             //prime number for $rev
-            $Rev_responce = Util::prime($rev);
+            $Rev_response = Util::prime($rev);
             //if $i and $rev both are prime
-            if($Prime_responce == 1 && $Rev_responce==1)
+            if($Prime_response == 1 && $Rev_response==1)
             {   //prints numbers which are prime and anagram
                 echo "Number which are prime Anagram :".$i;
                 echo "\n";  

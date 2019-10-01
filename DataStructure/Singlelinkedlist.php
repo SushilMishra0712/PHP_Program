@@ -1,4 +1,5 @@
 <?php
+//single linkedlist 
 class listnode{
     public $data;
     public $next;
@@ -18,10 +19,26 @@ class linkedlist{
         $this->firstNode=null;
         $this->lastNode=null;
     }
+
+    public function search($data)
+    {
+        //temp to hold head node
+        $temp = $this->firstNode;
+        //for loop to check data one by one 
+         for ($i=0; $i < $this->count; $i++) { 
+           //if temp data is equal to data in it will return true
+           if ($temp->data == $data) {
+                return true;
+            }
+            $temp = $temp->next;
+        }
+            return false;
+    }
+
     public function isEmpty(){
         return $this->firstNode=null;
     }
-    public function insertFirst($data)
+    public function addFirst($data)
     {
         $link = new ListNode($data);
         $link->next = $this->firstNode;
@@ -36,7 +53,7 @@ class linkedlist{
         $this->count++;
     }
  
-    public function insertLast($data)
+    public function add($data)
     {
         if($this->firstNode != NULL)
         {
@@ -48,11 +65,11 @@ class linkedlist{
         }
         else
         {
-            $this->insertFirst($data);
+            $this->addFirst($data);
         }
     }
  
-    public function deleteFirstNode()
+    public function removeFirst()
     {
         $temp = $this->firstNode;
         $this->firstNode = $this->firstNode->next;
@@ -62,7 +79,7 @@ class linkedlist{
         return $temp;
     }
 
-    public function deleteLastNode()
+    public function pop()          //removes last item
     {
         if($this->firstNode != NULL)
         {
@@ -88,7 +105,7 @@ class linkedlist{
         }
     }
  
-    public function deleteNode($key)
+    public function remove($key)
     {
         $current = $this->firstNode;
         $previous = $this->firstNode;
@@ -134,19 +151,22 @@ class linkedlist{
         echo "\n";
     }
 
-    public function totalNodes()
+    public function size()
     {
-        echo $this->count."\n";
+        echo "size is:".$this->count."\n";
     }
 
 }
 $obj=new linkedlist;
-$obj->insertFirst(10);
-$obj->insertFirst(60);
-$obj->insertFirst(40);
-$obj->insertLast(50);
-$obj->insertFirst(30);
-$obj->deleteFirstNode();
+$obj->add(10);
+$obj->add(60);
+$obj->add(40);
+$obj->add(50);
+$obj->add(99);
+$obj->addFirst(30);
+$obj->remove(40);
 $obj->readNode();
-$obj->totalNodes();
+$obj->pop();
+$obj->readNode();
+$obj->size();
 ?>

@@ -165,6 +165,7 @@ $fp = fopen('word.txt', "r"); //open file in read mode
 $string= fread($fp,filesize('word.txt')); //concate charecter in the file at the string 
 echo "\n";
 $arr = explode(" ", $string);
+sort($arr);
 //store the words in temporary array
 for($i=0;$i<count($arr);$i++){
     $obj->add($arr[$i]);

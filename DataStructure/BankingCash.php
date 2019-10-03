@@ -1,4 +1,5 @@
 <?php
+require ("Queue.php");
 class BankingCash{
     public $balance;
     public $last_transaction;

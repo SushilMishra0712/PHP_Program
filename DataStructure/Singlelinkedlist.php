@@ -7,7 +7,7 @@ class listnode{
         $this->data=$data;
         $this->next=null;
     }
-    public function readNode(){
+    public function show(){
         return $this->data;
     }
 }
@@ -79,7 +79,7 @@ class linkedlist{
         return $temp;
     }
 
-    public function pop()          //removes last item
+    public function removeLast()          //removes last item
     {
         if($this->firstNode != NULL)
         {
@@ -140,12 +140,12 @@ class linkedlist{
         $this->count--;  
     }
 
-    public function readNode()
+    public function show()
     {
         $current = $this->firstNode;
         while($current!= null)
         {
-            echo $current->readNode()." ";
+            echo $current->show()." ";
             $current = $current->next;
         }
         echo "\n";
@@ -157,16 +157,16 @@ class linkedlist{
     }
 
 }
-$obj=new linkedlist;
-$obj->add(10);
-$obj->add(60);
-$obj->add(40);
-$obj->add(50);
-$obj->add(99);
-$obj->addFirst(30);
-$obj->remove(40);
-$obj->readNode();
-$obj->pop();
-$obj->readNode();
-$obj->size();
+// $obj=new linkedlist;
+// $obj->add(10);
+// $obj->add(60);
+// $obj->add(40);
+// $obj->add(50);
+// $obj->add(99);
+// $obj->addFirst(30);
+// $obj->remove(40);
+// $obj->show();
+// $obj->removeLast();
+// $obj->show();
+// $obj->size();
 ?>

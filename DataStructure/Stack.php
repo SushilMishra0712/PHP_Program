@@ -5,7 +5,7 @@ class Stack
     protected $stack;
     protected $limit;
 
-    public function __construct($limit = 10) {
+    public function __construct($limit = 101) {
         // initialize the stack
         $this->stack = array();
         // stack can only contain this many items
@@ -60,15 +60,15 @@ class Stack
         echo "Size is:".count($this->stack)."\n";
     }
 }
-$obj=new Stack;
-$obj->push(10);
-$obj->push(20);
-$obj->push(30);
-$obj->push(40);
-$obj->pop();
-$obj->push(50);
-$obj->peek();
-$obj->show();
-$obj->size();
-$obj->search(20);
+// $obj=new Stack;
+// $obj->push(10);
+// $obj->push(20);
+// $obj->push(30);
+// $obj->push(40);
+// $obj->pop();
+// $obj->push(50);
+// $obj->peek();
+// $obj->show();
+// $obj->size();
+// $obj->search(20);
 ?>

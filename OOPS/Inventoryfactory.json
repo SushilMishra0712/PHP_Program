@@ -1,0 +1,36 @@
+{
+    "mobile":[
+        {
+            "name":"Oneplus",
+            "count":"25",
+            "price":"14500"
+        },
+        {
+            "name":"Redmi5",
+            "count":"35",
+            "price":"10000"
+        },
+        {
+            "name":"Vivo",
+            "count":"20",
+            "price":"12000"
+        }
+    ],
+    "tv":[
+        {
+            "name":"LcdTv",
+            "count":"12",
+            "price":"25000"
+        },
+        {
+            "name":"LedTv",
+            "count":"10",
+            "price":"28000"
+        },
+        {
+            "name":"Binamy",
+            "count":"8",
+            "price":"25000"
+        }
+    ]
+}

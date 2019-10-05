@@ -1,0 +1,75 @@
+{
+    "Rice":[
+        {
+            "name":"Basmati",
+            "weight":"50",
+            "price per kg":"45"
+    },
+    {
+            "name":"Arborio",
+            "weight":"60",
+            "price per kg":"42"
+    },
+    {
+            "name":"Brown",
+            "weight":"55",
+            "price per kg":"50"
+    },
+    {
+            "name":"Jasmine",
+            "weight":"80",
+            "price per kg":"58"
+    }],
+
+    "Wheat":[
+        {
+            "name":"Barley",
+            "weight":"60",
+            "price per kg":"40"
+        },
+        {
+            "name":"Alubia",
+            "weight":"25",
+            "price per kg":"42"
+        },
+        {
+            "name":"Corn",
+            "weight":"30",
+            "price per kg":"60"
+        },
+        {
+            "name":"Lentil",
+            "weight":"43",
+            "price per kg":"65"
+        },
+        {
+            "name":"BrownWheat",
+            "weight":"50",
+            "price per kg":"50"
+        }
+    ],
+
+    "Pulses":[
+        {
+            "name":"BlackGram",
+            "weight":"100",
+            "price per kg":"70"
+        },
+        {
+            "name":"Chickpea",
+            "weight":"20",
+            "price per kg":"68"
+
+        },
+        {
+            "name":"PigeonPea",
+            "weight":"35",
+            "price per kg":"90"
+        },
+        {
+            "name":"HorseGram",
+            "weight":"50",
+            "price per kg":"62"
+        }
+    ]
+}

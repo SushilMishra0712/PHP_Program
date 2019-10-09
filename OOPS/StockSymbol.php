@@ -14,6 +14,7 @@ class StockSymbol{
         $this->bookstock_buy=0;
         $this->newspaperstock_buy=0;
         $this->object_linkedlist=$object_linkedlist;
+        $this->object_linkedlist=new linkedlist;
     }
     //prints current balance of user
     function valueOf(){
@@ -22,7 +23,6 @@ class StockSymbol{
     //function to buy stocks available in StockAccount.json file
     function buy($amount,$symbol){
     //balance should be greater than stock value to buy
-    $this->object_linkedlist=new linkedlist;
     if($amount<=$this->totalamount){
         //buy book stock
         if($symbol=="Book"){
@@ -133,7 +133,7 @@ class StockSymbol{
     }
     
 }
-//create object of class StockAccount
+//create object of class StockSymbol
 $object=new  StockSymbol("Amit","10000");
 //store return value of function jsonfileRead
 $output_jsonfileRead=$object->jsonfileRead();
@@ -166,6 +166,7 @@ while($loop>0)
     echo "Which stock you want to sell?\n1 Book\n2 Newspaper\n";
     $object->switchCase3($output_jsonfileRead);
     break;
+    //to view the symbols purchased in stack
     case 5:
     $object->show_symbol();
     break;

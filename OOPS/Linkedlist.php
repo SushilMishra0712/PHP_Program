@@ -79,7 +79,7 @@ class linkedlist{
         return $temp;
     }
 
-    public function removeLast()          //removes last item
+    public function remove_last()          //removes last item
     {
         if($this->firstNode != NULL)
         {
@@ -158,14 +158,14 @@ class linkedlist{
 
 }
 // $obj=new linkedlist;
-// $obj->add(10);
-// $obj->add(60);
-// $obj->add(40);
+// $obj->addLast(10);
+// $obj->addLast(60);
+// $obj->addLast(40);
 // $obj->add(50);
 // $obj->addFirst(30);
 // $obj->remove(40);
 // $obj->show();
-// $obj->removeLast();
+// $obj->remove_last();
 // $obj->show();
 // $obj->size();
 ?>

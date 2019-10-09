@@ -82,7 +82,7 @@ $object_companyshares=new CompanyShares;
 //call function get_content to read from json file
 $object_companyshares->get_content();
 $loop=1;
-//while loop to take user input till user exit program
+//while loop to take user input till user exits program
 while($loop>0){
     echo "Enter 1 to Check Company Shares\nEnter 2 to add new Share\nEnter 3 to remove share\nEnter 4 to Exit\n";
     fscanf(STDIN,"%d",$choice);

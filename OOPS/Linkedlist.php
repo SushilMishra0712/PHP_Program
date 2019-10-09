@@ -162,7 +162,6 @@ class linkedlist{
 // $obj->add(60);
 // $obj->add(40);
 // $obj->add(50);
-// $obj->add(99);
 // $obj->addFirst(30);
 // $obj->remove(40);
 // $obj->show();

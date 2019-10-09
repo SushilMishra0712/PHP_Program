@@ -47,33 +47,40 @@ class CompanyShares{
             $this->userinput_array[$name][$i][$price]=$price;
         }
         //add the details in linkedlist
-        $this->object->add($userinput_array);
+        $this->object->add($this->userinput_array);
     }
     //function to remove the share from the linkedlist
     function remove_share(){
         echo "Which share you want to remove?\n";
         fscanf(STDIN,"%s",$remove);
         //if want to remove from already stored companyshare
-        switch($remove){
-        case 'Book':
-        $this->object->remove($this->associate_array["0"]);
-        echo "Book share is Removed\n";
-        break;
-        case 'Newspaper':
-        $this->object->remove($this->associate_array["1"]);
-        echo "Newspaper share is Removed\n";
-        break;
-        case 'Magzines':
-        $this->object->remove($this->associate_array["2"]);
-        echo "Magzines share is Removed\n";
-        break;
-        case 'Article':
-        $this->object->remove($this->associate_array["3"]);
-        echo "Article share is Removed\n";
+        if(!$this->userinput_array[$remove]){
+            switch($remove){
+            case 'Book':
+            $this->object->remove($this->associate_array["0"]);
+            echo "Book share is Removed\n";
+            break;
+            case 'Newspaper':
+            $this->object->remove($this->associate_array["1"]);
+            echo "Newspaper share is Removed\n";
+            break;
+            case 'Magzines':
+            $this->object->remove($this->associate_array["2"]);
+            echo "Magzines share is Removed\n";
+            break;
+            case 'Article':
+            $this->object->remove($this->associate_array["3"]);
+            echo "Article share is Removed\n";
+            break;
+            default:
+            echo $remove." does'nt exist in company shares\n";
+            }
         }
-        //if want to remove from newly added companyshare
-        $this->object->remove($this->userinput_array["$remove"]);
-        echo $remove." share is removed\n";
+        else{
+            //if want to remove from newly added companyshare
+            $this->object->remove($this->userinput_array[$remove]);
+            echo $remove." share is removed\n";
+        }
     }
     
 }

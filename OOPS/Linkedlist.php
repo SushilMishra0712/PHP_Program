@@ -145,7 +145,7 @@ class linkedlist{
         $current = $this->firstNode;
         while($current!= null)
         {
-            print_r($current->show())." ";
+            echo $current->show()." ";
             $current = $current->next;
         }
         echo "\n";
@@ -158,9 +158,9 @@ class linkedlist{
 
 }
 // $obj=new linkedlist;
-// $obj->addLast(10);
-// $obj->addLast(60);
-// $obj->addLast(40);
+// $obj->add(10);
+// $obj->add(60);
+// $obj->add(40);
 // $obj->add(50);
 // $obj->addFirst(30);
 // $obj->remove(40);

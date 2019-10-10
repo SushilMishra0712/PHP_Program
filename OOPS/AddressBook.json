@@ -1,0 +1,65 @@
+[
+    {
+        "Firstname": "Sushil",
+        "Lastname": "Mishra",
+        "Address": "Bhadohi",
+        "City": "Varanasi",
+        "State": "U.P",
+        "Zip": "400011",
+        "PhoneNumber": 9845320988
+    },
+    {
+        "Firstname": "Rohit",
+        "Lastname": "Sarate",
+        "Address": "MiraRoad",
+        "City": "Mumbai",
+        "State": "Maharashtra",
+        "Zip": 400012,
+        "PhoneNumber": 8909008978
+    },
+    {
+        "Firstname": "Nitesh",
+        "Lastname": "Patil",
+        "Address": "Virar",
+        "City": "Mumbai",
+        "State": "Maharashtra",
+        "Zip": 400023,
+        "PhoneNumber": 8909092387
+    },
+    {
+        "Firstname": "Sam",
+        "Lastname": "Patel",
+        "Address": "Andheri",
+        "City": "Mumbai",
+        "State": "Maharashtra",
+        "Zip": 400045,
+        "PhoneNumber": 8945678765
+    },
+    {
+        "Firstname": "Ryan",
+        "Lastname": "David",
+        "Address": "malad",
+        "City": "maharashtra",
+        "State": "Chennai",
+        "Zip": 400068,
+        "PhoneNumber": 9034675423
+    },
+    {
+        "Firstname": "Amar",
+        "Lastname": "Singh",
+        "Address": "Borivali",
+        "City": "Mumbai",
+        "State": "Maharashtra",
+        "Zip": 400069,
+        "PhoneNumber": 8923564309
+    },
+    {
+        "Firstname": "Bablu",
+        "Lastname": "Gupta",
+        "Address": "kochi",
+        "City": "Islamabad",
+        "State": "Dobhra",
+        "Zip": 520012,
+        "PhoneNumber": 9809237583
+    }
+]

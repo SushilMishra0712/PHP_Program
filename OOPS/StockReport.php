@@ -27,7 +27,7 @@ class StockReport{
     }
     //function to print results in json file
     public function printresult($data){
-        $result=file_put_contents("Stockreport0.json",json_encode($data));
+        $result=file_put_contents("Stockreport1.json",json_encode($data));
         //if found data then echo successful
         if(!$result){
         echo "Something went wrong\n";

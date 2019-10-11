@@ -55,7 +55,7 @@ class AddressBook{
             echo "Nothing to print in AddressBook\n";
         }
         else{
-            "AddressBook Updated Successfully\n";
+            echo "AddressBook Updated Successfully\n";
         }
     }
     //function to edit the existing contact details
@@ -124,9 +124,9 @@ class AddressBook{
         //read AddressBook.json file
         $jsonfile_content=file_get_contents("AddressBook.json");
         $this->addressbook_array=json_decode($jsonfile_content,true);
-        echo "Enter first name whose details you want to edit:\n";
+        echo "Enter first name whose details you want to delete:\n";
         fscanf(STDIN,"%s",$first_name);
-        echo "Enter last name whose details you want to edit:\n";
+        echo "Enter last name whose details you want to delete:\n";
         fscanf(STDIN,"%s",$last_name);
         //match name with all the contacts
         for($i=0;$i<count($this->addressbook_array);$i++){

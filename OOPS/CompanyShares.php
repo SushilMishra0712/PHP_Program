@@ -7,7 +7,7 @@ class CompanyShares{
     public $userinput_array;
     //function constructor to initialize
     function __construct(){
-        $this->object=$object;
+        $this->object=null;
         $this->associate_array=array();
         $this->userinput_array=array();
     }

@@ -17,3 +17,4 @@ $object2=LazyInitializedSingleton::getInstance();
 var_dump($object2);
 $object3=LazyInitializedSingleton::getInstance();
 var_dump($object3);
+?>

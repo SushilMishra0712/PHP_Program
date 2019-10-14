@@ -38,3 +38,4 @@ var_dump($conn2);
 $instance3 = ConnectDb::getInstance();
 $conn3 = $instance3->getConnection();
 var_dump($conn3);
+?>

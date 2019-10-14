@@ -1,4 +1,5 @@
 <?php
+//LazyInitialization Concept
 class LazyInitializedSingleton{
     private static $instance=null;
     private function __construct(){

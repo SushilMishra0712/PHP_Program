@@ -32,10 +32,12 @@ echo $target->request();
 echo "Client:I work just fine with the Target objects\n";
 $target=new Target;
 clientCode($target);
+
 //call specificRequest function of class Adaptee
 $adaptee=new Adaptee;
 echo "Client:The Adaptee class has a weird interface\n";
 echo "Adaptee:".$adaptee->specificRequest();
+
 //call request function of class Adapter
 echo "\nClient:But I can work with it via Adapter\n";
 $adapter=new Adapter($adaptee);

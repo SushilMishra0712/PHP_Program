@@ -22,6 +22,9 @@ if($rc->hasMethod('isLoggedIn')){
 //methods related to function getData
 $rm_getData=new ReflectionMethod('User','getData');
 echo ' '.print_r(get_class_methods($rm_getData),true);
+//function getData starts at line..
+echo "getData() starts at line:".$rm_getData->getStartLine()."\n";
+
 //methods related to function setData
 $rm_setData=new ReflectionMethod('User','setData');
 echo ' '.print_r(get_class_methods($rm_setData),true);

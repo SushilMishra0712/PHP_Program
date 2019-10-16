@@ -17,4 +17,14 @@ print_r($my_array);
 $text="We at GuruSchools strive to make quality education affordable to the masses. GuruSchools.com";
 $text=preg_replace("/Guru/","W3",$text);
 echo $text."\n";
+
+//lets now check the validity of an email address
+$my_email="name@company.com";
+if(preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/",$my_email)){
+    echo $my_email." is a valid email address\n";
+}
+else{
+    echo $my_email." is NOT a valid email address\n";
+}
+
 ?>

@@ -1,3 +1,9 @@
+<style>
+td{
+    padding: 5px 20px;
+}
+</style>
+
 <?php
 // $db=new PDO("mysql:host=localhost;dbname=test","root",null);
 // echo "Connection done";
@@ -33,10 +39,23 @@ echo '<pre>';
 //     print_r($row);
 // }
 
+echo "<table>";
+echo "<tr>
+<th>Id</th>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Age</th>
+</tr>";
 //associative type
 while($row=$query->fetch(PDO::FETCH_ASSOC)){
-    print_r($row);
+    //print_r($row);
+    echo "<tr><td>".$row['Id']."</td><td>".$row['firstname']."</td><td>".$row['lastname']."</td><td>".$row['age']."</td></tr>";
 }
+
+echo "</table>";
+// $row=$query->fetch(PDO::FETCH_ASSOC);
+// print_r($row);
+
 
 //fetch all
 // $row=$query->fetchAll();
@@ -76,3 +95,7 @@ while($row=$query->fetch(PDO::FETCH_ASSOC)){
 // $statement->execute([
 //     'lalit2','powar','33'
 // ]);
+
+?>
+
+

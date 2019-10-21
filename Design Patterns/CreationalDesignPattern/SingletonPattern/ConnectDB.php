@@ -11,8 +11,7 @@ class ConnectDB{
     private $name='name';
     //The DB connection is established in the private constructor
     private function __construct(){
-    $this->conn=new PDO("mysql:host={$this->host};
-    dbname={$this->name}", $this->user,$this->password,
+    $this->conn=new PDO("mysql:host={$this->host};dbname={$this->name}", $this->user,$this->password,
     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
     }
 

@@ -30,43 +30,33 @@ class registration_validate
             $age=$_POST['age'];
             $address=$_POST['address'];
             $phone_number=$_POST['phone_number'];
-            //sanitize and validate an email address
-            $email=filter_var($email,FILTER_SANITISE_EMAIL);
-            if(!filter_var($email,FILTER_VALIDATE_EMAIL)==false)
+
+            $db=new PDO("mysql:host=localhost;dbname=test","root",null); 
+            $query=$db->query('SELECT * FROM Userlogin');
+            echo "<pre>";
+            $flag="false";
+            while($row=$query->fetch(PDO::FETCH_ASSOC))
             {
-                $db=new PDO("mysql:host=localhost;dbname=test","root",null);
-                
-                $query=$db->query('SELECT * FROM Userlogin');
-                echo "<pre>";
-                $flag="false";
-                while($row=$query->fetch(PDO::FETCH_ASSOC))
+                if($row['email']==$email)
                 {
-                    if($row['email']==$email)
-                    {
-                        $flag="true";
-                    }
+                    $flag="true";
                 }
-                if($flag=="true")
-                {
+            }
+            if($flag=="true")
+            {
                 echo "<script>window.alert('Account already exists in database please log in with another email.');window.location.href='../Frontend/registration.php';</script><br>";
-                }
-                else if($firstname!=null && $lastname!=null && $email!=null && $password!=null && $age!=null && $address!=null && $phone_number!=null)
-                {
-                    $query=$db->query("INSERT INTO `Userlogin`(`firstname`, `lastname`,`email`,`password`, `age`,`address`,`phone_number`) 
-                    VALUES('$firstname','$lastname','$email','$password','$age','$address','$phone_number')");
-                    header("Location:../Frontend/login.php");
-                }
-                else
-                {
-                    echo "Please insert all the details<br>";
-                }
+            }
+            else if($firstname!=null && $lastname!=null && $email!=null && $password!=null && $age!=null && $address!=null && $phone_number!=null)
+            {
+                $query=$db->query("INSERT INTO `Userlogin`(`firstname`, `lastname`,`email`,`password`, `age`,`address`,`phone_number`) 
+                VALUES('$firstname','$lastname','$email','$password','$age','$address','$phone_number')");
+                header("Location:../Frontend/login.php");
             }
             else
             {
-                echo "<script>window.alert('Email is not a valid email address');window.location.href='../Frontend/registration.php';</script><br>";
+                echo "Please insert all the details<br>";
             }
         }
-
         else
         {
             echo "Form not submitted<br>";

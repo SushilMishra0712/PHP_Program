@@ -36,10 +36,12 @@
                     {
                         $('#show_error_email').html('email id must be filled.');
                         $('#show_error_email').css('color','red');
+                        $('#email').css('background','lightpink');
                         if(user_password.length==0)
                         {
                             $('#show_error_password').html('password must be filled.');
                             $('#show_error_password').css('color','red');
+                            $('#password').css('background','lightpink');
                             return false;
                         }
                         return false;
@@ -50,12 +52,14 @@
                         {
                             $('#show_error_email').html('email id must be between 3 to 25 characters.');
                             $('#show_error_email').css('color','red');
+                            $('#email').css('background','lightpink');
                             return false;  
                         }
                         if(user_password.length==0)
                         {
                             $('#show_error_password').html('password must be filled.');
                             $('#show_error_password').css('color','red');
+                            $('#password').css('background','lightpink');
                             return false;
                         }
                     }

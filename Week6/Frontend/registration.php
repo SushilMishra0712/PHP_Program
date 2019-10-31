@@ -51,6 +51,7 @@
                     {
                         $('#show_error_firstname').html('firstname must be filled.');
                         $('#show_error_firstname').css('color','red');
+                        $('#firstname').css('background','lightpink');
                         return false;
                     }
                     else if(firstname.length!=0)
@@ -59,12 +60,14 @@
                         {
                             $('#show_error_firstname').html('firstname must be between 3 to 25 characters.');
                             $('#show_error_firstname').css('color','red');
+                            $('#firstname').css('background','lightpink');
                             return false;  
                         }
                         if(lastname.length==0)
                         {
                             $('#show_error_lastname').html('lastname must be filled.');
                             $('#show_error_lastname').css('color','red');
+                            $('#lastname').css('background','lightpink');
                             return false;
                         }
                         else if(lastname.length!=0)
@@ -73,12 +76,14 @@
                             {
                                 $('#show_error_lastname').html('lastname must be between 3 to 25 characters.');
                                 $('#show_error_lastname').css('color','red');
+                                $('#lastname').css('background','lightpink');
                                 return false;  
                             }
                             if(email.length==0)
                             {
                                 $('#show_error_email').html('email id must be filled.');
                                 $('#show_error_email').css('color','red');
+                                $('#email').css('background','lightpink');
                                 return false;
                             }
                             else if(email.length!=0)
@@ -87,6 +92,7 @@
                                 {
                                     $('#show_error_email').html('email must be between 13 to 35 characters.');
                                     $('#show_error_email').css('color','red');
+                                    $('#email').css('background','lightpink');
                                     return false;  
                                 }
                                 
@@ -94,6 +100,7 @@
                                 {
                                     $('#show_error_password').html('password must be filled.');
                                     $('#show_error_password').css('color','red');
+                                    $('#password').css('background','lightpink');
                                     return false;
                                 }
                                 else if(password.length!=0)
@@ -102,12 +109,14 @@
                                     {
                                         $('#show_error_password').html('password must be between 6 to 25 Alphanumeric.');
                                         $('#show_error_password').css('color','red');
+                                        $('#password').css('background','lightpink');
                                         return false;  
                                     }
                                     if(age.length==0)
                                     {
                                         $('#show_error_age').html('age must be filled.');
                                         $('#show_error_age').css('color','red');
+                                        $('#age').css('background','lightpink');
                                         return false;
                                     }
                                     else if(age.length!=0)
@@ -116,12 +125,14 @@
                                         {
                                             $('#show_error_age').html('age must be between 0 to 100 years.');
                                             $('#show_error_age').css('color','red');
+                                            $('#age').css('background','lightpink');
                                             return false;  
                                         }
                                         if(address.length==0)
                                         {
                                             $('#show_error_address').html('address must be filled.');
                                             $('#show_error_address').css('color','red');
+                                            $('#address').css('background','lightpink');
                                             return false;
                                         }
                                         else if(address.length!=0)
@@ -130,12 +141,14 @@
                                             {
                                                 $('#show_error_address').html('address must be between 16 to 100 characters.');
                                                 $('#show_error_address').css('color','red');
+                                                $('#address').css('background','lightpink');
                                                 return false;  
                                             }
                                             if(phonenumber.length==0)
                                             {
                                                 $('#show_error_phonenumber').html('phone number must be filled.');
                                                 $('#show_error_phonenumber').css('color','red');
+                                                $('#phonenumber').css('background','lightpink');
                                                 return false;
                                             }
                                             else if(phonenumber.length!=0)
@@ -144,10 +157,11 @@
                                                 {
                                                     $('#show_error_phonenumber').html('phone number must be between 10 to 15 digits.');
                                                     $('#show_error_phonenumber').css('color','red');
+                                                    $('#phonenumber').css('background','lightpink');
                                                     return false;
                                                 }
                                                 else{
-                                                    alert("Data sent to server successfully!");
+                                                    alert("Data sending to the server...!");
                                                     return true;
                                                 }
                                             }

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 class login_validate
 {
@@ -9,31 +8,39 @@ class login_validate
         {
             $email=$_POST['email'];
             $password=$_POST['password'];
-            
-            $db=new PDO("mysql:host=localhost;dbname=test","root",null);
-            
-            $query=$db->query('SELECT * FROM Userlogin');
-            echo "<pre>";
-            $flag="false";
-            while($row=$query->fetch(PDO::FETCH_ASSOC))
-            {
-                if($row['email']== $email && $row['password']==$password)
+            //sanitize and validate an email address
+            // $email=filter_var($email,FILTER_SANITISE_EMAIL);
+            // if(!filter_var($email,FILTER_VALIDATE_EMAIL)==true)
+            // {
+                $db=new PDO("mysql:host=localhost;dbname=test","root",null);
+                
+                $query=$db->query('SELECT * FROM Userlogin');
+                echo "<pre>";
+                $flag="false";
+                while($row=$query->fetch(PDO::FETCH_ASSOC))
                 {
-                    $flag="true";
-                    $name=$row['firstname'];
-                    $_SESSION['email']=$email;
-                    $_SESSION['user']=$row['firstname']." ".$row['lastname'];
-                    $_SESSION['log']='1';
+                    if($row['email']== $email && $row['password']==$password)
+                    {
+                        $flag="true";
+                        $name=$row['firstname'];
+                        $_SESSION['email']=$email;
+                        $_SESSION['user']=$row['firstname']." ".$row['lastname'];
+                        $_SESSION['log']='1';
+                    }
                 }
-            }
-            if($flag=="false")
-            {
-                echo "<script>window.alert('Email and password does not match');window.location.href='../Frontend/login.php';</script><br>";
-            }
-            else if($flag=="true")
-            {
-                header("Location:../Frontend/home.php");
-            }
+                if($flag=="false")
+                {
+                    echo "<script>window.alert('Email and password does not match');window.location.href='../Frontend/login.php';</script><br>";
+                }
+                else if($flag=="true")
+                {
+                    header("Location:../Frontend/home.php");
+                }
+            // }
+            // else
+            // {
+            //     echo "<script>window.alert('Email is not a valid email address');window.location.href='../Frontend/login.php';</script><br>";
+            // }
         }
         else{
             echo "Form does not submitted<br>";

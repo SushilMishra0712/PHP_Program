@@ -54,7 +54,7 @@ class registration_validate
                     {
                         $query=$db->query("INSERT INTO `Userlogin`(`firstname`, `lastname`,`email`,`password`, `age`,`address`,`phone_number`) 
                         VALUES('$firstname','$lastname','$email','$password','$age','$address','$phone_number')");
-                        header("Location:../Frontend/login.php");
+                        echo "<script>window.alert('Account Created Successfully!');window.location.href='../Frontend/login.php';</script><br>";
                     }
                     else
                     {

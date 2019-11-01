@@ -36,30 +36,38 @@
                     {
                         $('#show_error_email').html('email id must be filled.');
                         $('#show_error_email').css('color','red');
+                        $('#show_error_email').css('font-size','16px');
                         $('#email').css('background','lightpink');
+                        $('#email').css('border','1px solid red');
                         if(user_password.length==0)
                         {
                             $('#show_error_password').html('password must be filled.');
                             $('#show_error_password').css('color','red');
+                            $('#show_error_password').css('font-size','16px');
                             $('#password').css('background','lightpink');
+                            $('#password').css('border','1px solid red');
                             return false;
                         }
                         return false;
                     }
                     else if(user_email.length!=0)
                     {
-                        if((user_email.length<=2) || (user_email.length>=26))
+                        if((user_email.length<=11) || (user_email.length>=36))
                         {
-                            $('#show_error_email').html('email id must be between 3 to 25 characters.');
+                            $('#show_error_email').html('email id must be between 12 to 36 characters.');
                             $('#show_error_email').css('color','red');
+                            $('#show_error_email').css('font-size','16px');
                             $('#email').css('background','lightpink');
+                            $('#email').css('border','1px solid red');
                             return false;  
                         }
                         if(user_password.length==0)
                         {
                             $('#show_error_password').html('password must be filled.');
                             $('#show_error_password').css('color','red');
+                            $('#show_error_password').css('font-size','16px');
                             $('#password').css('background','lightpink');
+                            $('#password').css('border','1px solid red');
                             return false;
                         }
                     }

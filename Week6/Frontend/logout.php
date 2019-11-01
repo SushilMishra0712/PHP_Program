@@ -4,5 +4,5 @@
         $_SESSION['user']=null;
         $_SESSION['log']= '0';
     session_destroy();
-    header("Location:login.php");
+    echo "<script>window.alert('Logout Successful!');window.location.href='../Frontend/login.php';</script><br>";
 ?>

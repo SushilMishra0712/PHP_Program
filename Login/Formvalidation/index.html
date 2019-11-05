@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Form page</title>
+        <script>
+            $(document).ready(function()
+            {
+                $("form").submit(function(event)
+                {
+                    event.preventDefault();
+                    var name=$("#mail-name").val();
+                    var email=$("#mail-email").val();
+                    var gender=$("#mail-gender").val();
+                    var message=$("#mail-message").val();
+                    var submit=$("#mail-submit").val();
+                    $(".form-message").load("mail.php",
+                    {
+                        name:name,
+                        email:email,
+                        gender:gender,
+                        message:message,
+                        submit:submit
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form action="mail.php" method="POST">
+            FullName<br>
+            <input id="mail-name" type="text" name="name" placeholder="Full Name">
+            <br><br>
+            Email<br>
+            <input id="mail-email" type="text" name="email" placeholder="E-mail">
+            <br><br>
+            Gender<br><select id="mail-gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br><br>
+            Message<br>
+            <textarea id="mail-message" name="message" placeholder="message">
+            </textarea>
+            <br><br>
+            <button id="mail-submit" type="submit" name="submit">Send e-mail
+            </button>
+            <div id="form-error"></div>
+        </form>
+    </body>
+</html>

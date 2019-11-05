@@ -1,0 +1,136 @@
+body
+{
+    background-color: #f4f4f4;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin:0;
+    background-image:url(image1.jpeg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container
+{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+#main-header
+{
+    background-color: coral;
+    color: #fff;
+}
+#navbar
+{
+    background-color: #333;
+    color: #fff;
+}
+#navbar ul
+{
+    padding: 0;
+    list-style: none;
+}
+#navbar li
+{
+    display: inline;
+}
+#navbar a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 20px;
+   
+}
+#navbar a:hover
+{
+    color: aqua;
+}
+#showcase
+{
+    background-image: url(image.jpeg);
+    background-position: center;
+    min-height: 300px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#showcase h1
+{
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6em;
+    padding-top: 30px;
+}
+#main
+{
+    float: left;
+    width:65%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    color: rgb(50, 120, 120);
+}
+#sidebar
+{
+    float: right;
+    width: 30%;
+    background: #333;
+    color: #fff;
+    padding: 0 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px lime;
+}
+#main-footer
+{
+    background: #333;
+    color: lightcoral;
+    text-align:center;
+    padding: 1px;
+    margin-top: 2px;
+}
+#main-footer:hover
+{
+    color: aqua;
+}
+#container-logout
+{
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    padding: 3px;
+    background-color:lightskyblue;
+    margin-left: 160px;
+    margin-bottom: 10px;
+    width: 100px;
+}
+#container-logout button
+{
+    display: inline-block;
+    background-color:lightskyblue;
+    color:black;
+    text-align: center;
+    font-size: 15px;
+    padding: 3px;
+    align-self: center;
+    width: 100px;
+}
+#container-logout button:hover
+{
+    opacity: 0.8;
+}
+@media(max-width:600px)
+{
+    #main
+    {
+        width:100%;
+        float:none;
+    }
+    #sidebar
+    {
+        width:100%;
+        float:none;
+    }
+}
+
+

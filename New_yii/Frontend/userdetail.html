@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>User data</title>    
+    </head>
+    <body> 
+        <div id="container" style="border: 1px solid black;padding: 10px;color: brown;">
+        <div id="test1"><h2></h2></div>
+        <div id="test2"><h2></h2></div>
+        <div id="test3"><h2></h2></div>
+        <div id="test4"><h2></h2></div>
+        <div id="test5"><h2></h2></div>
+        <div id="test6"><h2></h2></div>
+        </div>
+        <script>
+                document.getElementById("test1").innerHTML = '<h2>Firstname: '+localStorage.getItem("firstname")+'</h2>';
+                document.getElementById("test2").innerHTML = '<h2>lastname: '+localStorage.getItem("lastname")+'</h2>';
+                document.getElementById("test3").innerHTML = '<h2>Email: '+localStorage.getItem("email")+'</h2>';
+                document.getElementById("test4").innerHTML = '<h2>Age: '+localStorage.getItem("age")+'</h2>';
+                document.getElementById("test5").innerHTML = '<h2>Address: '+localStorage.getItem("address")+'</h2>';
+                document.getElementById("test6").innerHTML = '<h2>Contact: '+localStorage.getItem("phonenumber")+'</h2>';
+        </script>
+    </body>
+</html>

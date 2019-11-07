@@ -1,0 +1,142 @@
+body
+{
+    background-size: cover;
+    align-self: auto;
+    background:wheat;
+}
+.container-login
+{
+    
+    border:1px solid;
+    box-shadow: 5px 10px 18px lawngreen;
+    background: lightgreen;
+    padding:40px;
+    margin:50px 450px;
+    align-self: center;
+    font-size: 20px;
+}
+.container-login input[type=text], .container-login input[type=password]
+{
+    width:100%;
+    padding: 5px;
+}
+.container-login input[type=button]
+{
+    width:100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+.container-login input[type=button]:hover
+{
+    opacity:0.8;
+}
+.container-login form input
+{
+    color:black;
+    background: whitesmoke;
+}
+#login-header
+{
+    text-align: center;
+    color:royalblue;
+    font-size: 35px;
+    margin-top: 20px;
+}
+.container-login button
+{
+    display: inline-block;
+    background-color: #7b38d8;
+    text-align: center;
+    font-size: 15px;
+    padding: 3px;
+}
+button:hover 
+{
+    opacity: 0.8;
+}
+#registration-header
+{
+    text-align: center;
+    color:royalblue;
+    font-size: 35px;
+    margin-top:2px;
+}
+.container-registration
+{
+    border:1px solid;
+    box-shadow: 5px 10px 18px lawngreen;
+    background: lightgreen;
+    padding:20px;
+    margin:0px 400px;
+    align-self: center;
+    font-size: 20px;
+}
+.container-registration input[type=text], .container-login input[type=password]
+{
+    width:100%;
+    padding: 3px;
+}
+.container-registration input[type=password]
+{
+    width:100%;
+    padding: 3px;
+}
+.container-registration input[type=number]
+{
+    width:100%;
+    padding: 3px;
+}
+.container-registration textarea
+{
+    width:100%;
+    padding: 3px;
+}
+.container-registration input[type=button]
+{
+    width:100%;
+    text-align: center;
+    padding: 10px;
+    background-color:coral; 
+    font-size: 20px;
+}
+.container-registration input:hover[type=button]
+{
+    opacity: 0.8;
+}
+.container-login input[type=button]:hover
+{
+    opacity: 0.8;
+}
+@media(max-width:600px)
+{
+    #login
+    {
+        width:100%;
+        float:none;
+    }
+    #registration
+    {
+        width:100%;
+        float:none;
+    }
+    .container-login
+    {
+        width:100%;
+        float:none;
+    }
+    .container-registration
+    {
+        width:100%;
+        float:none;
+    }
+    .body
+    {
+        width:100%;
+        float:none;
+    }
+}
+
+
+
+

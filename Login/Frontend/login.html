@@ -15,7 +15,7 @@
                 <h2 style="display: none;">This is going to be changed..</h2>
             </div>
             <div class="container-login">
-            <form action="../Backend/login_validate.php" method="POST">
+            <form method="POST">
             Enter Email<br>
             <div id="show_error_email"></div>
             <input type="text" name="email" id="email" placeholder="Enter email" required><br><br>
@@ -34,24 +34,13 @@
             {
                 $('#submit').click(function()
                 {
-                    // Check browser support for local storage
                     var user_email=$('#email').val();
                     var user_password=$('#password').val();
-                    if (typeof(Storage) !== "undefined") 
-                    {
-                        // Store
-                        localStorage.setItem("email", user_email);
-                        localStorage.setItem("password", user_password);
-                        
-                        // Retrieve
-                        document.getElementById("localStorage").innerHTML = "Email: "+localStorage.getItem("email")+"<br>"+"Password: "+localStorage.getItem("password");
-                        $("#localStorage").hide();
-                        // $("#localStorage").show();
-                    } 
-                    else 
-                    {
-                        document.getElementById("localStorage").innerHTML = "Sorry, your browser does not support Web Storage...";
-                    }
+                    
+                    // Store email and password in localStorage
+                    localStorage.setItem("email", user_email);
+                    localStorage.setItem("password", user_password);
+                   
                     //Email validation
                     if(user_email.length==0)
                     {
@@ -96,20 +85,6 @@
                 });
             });
 
-            // function myfun()
-            // {
-            //     var req=new XMLHttpRequest();
-            //     req.open('POST','../Backend/login_validate.php',true);
-            //     req.send();
-            //     req.onreadystatechange=function()
-            //     {
-            //         if(req.readyState==4 && req.status==200)
-            //         {
-            //             document.getElementById('loaddata').innerHTML=req.responseText;
-            //         }
-            //     }
-            // }
-
             $(document).ready(function(){
             $('#submit').click(function($event){
                 event.preventDefault();
@@ -121,23 +96,21 @@
                 $.ajax({
                 type: "POST",
                 dataType: "json",
-                url: "../Backend/login_validate.php", 
+                url: "../Backend/loginUser.php", 
                 data: data,
                 success: function(data) {
                         var jsonData = JSON.parse(data);
                         // user is logged in successfully in the back-end
                         if (jsonData.success == 1)
                         {
-                            header("Location:home.html");
-                            
+                            header("Location:home.html");                      
                         }
                         else
                         {
                             alert('Invalid Credentials!');
                         }
                 },
-                error: function (data) {
-                
+                error: function (data) {             
                     document.getElementById('loaddata').innerHTML=data.responseText;
                     document.getElementById('email').innerHTML=null;
                     document.getElementById('password').innerHTML=null;

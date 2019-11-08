@@ -3,6 +3,10 @@
         <title>Logout</title>
     </head>
     <body>
-        <h1>Logout page</h1>
+        <script>
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+        window.location.href="login.html";
+        </script>
     </body>
 </html>

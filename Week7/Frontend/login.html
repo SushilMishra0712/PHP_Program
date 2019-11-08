@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>Login Page
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+        </script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="login-header">
+            <h3> Login page</h3>
+            </div>
+            <div id="loaddata">
+                <h2 style="display: none;">This is going to be changed..</h2>
+            </div>
+            <div class="container-login">
+            <form method="POST">
+            Enter Email<br>
+            <div id="show_error_email"></div>
+            <input type="text" name="email" id="email" placeholder="Enter email" required><br><br>
+            Enter Password<br>
+            <div id="show_error_password"></div>
+            <input type="password" name="password" id="password" placeholder="************" required><br><br>
+            <input type="button" name="submit" value="Login" id="submit" ><br><br><br>
+            </form>
+            &nbsp;Don't have account?
+            <a href="registration.html"><button>SignUp</button></a><br>
+            </div>
+            <div id="localStorage"></div>
+        </div>
+        <script>
+            $(document).ready(function()
+            {
+                $('#submit').click(function($event)
+                {
+                    var user_email=$('#email').val();
+                    var user_password=$('#password').val();
+
+                    //Email validation
+                    if(user_email.length==0)
+                    {
+                        $('#show_error_email').html('email id must be filled.');
+                        $('#show_error_email').css('color','red');
+                        $('#show_error_email').css('font-size','16px');
+                        $('#email').css('background','lightpink');
+                        $('#email').css('border','1px solid red');
+                        if(user_password.length==0)
+                        {
+                            $('#show_error_password').html('password must be filled.');
+                            $('#show_error_password').css('color','red');
+                            $('#show_error_password').css('font-size','16px');
+                            $('#password').css('background','lightpink');
+                            $('#password').css('border','1px solid red');
+                            return false;
+                        }
+                        return false;
+                    }
+                    else if(user_email.length!=0)
+                    {
+                        if((user_email.length<=11) || (user_email.length>=36))
+                        {
+                            $('#show_error_email').html('email id must be between 12 to 36 characters.');
+                            $('#show_error_email').css('color','red');
+                            $('#show_error_email').css('font-size','16px');
+                            $('#email').css('background','lightpink');
+                            $('#email').css('border','1px solid red');
+                            return false;  
+                        }
+                        if(user_password.length==0)
+                        {
+                            $('#show_error_password').html('password must be filled.');
+                            $('#show_error_password').css('color','red');
+                            $('#show_error_password').css('font-size','16px');
+                            $('#password').css('background','lightpink');
+                            $('#password').css('border','1px solid red');
+                            return false;
+                        }
+                    }                 
+                });        
+            });
+
+
+            $(document).ready(function(){
+                $('#submit').click(function($event){
+                    event.preventDefault();
+                    var data = {
+                        "email": $("#email").val(),
+                        "password": $("#password").val()
+                    };
+                    $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: "http://localhost:8080/index.php?r=site/login", 
+                    data: data,
+                    success: function(data) {
+                        console.log('login success');
+                        console.log(data);
+                        if(data.code == 200)
+                        {   
+                            localStorage.setItem("firstname",data.firstname);
+                            localStorage.setItem("lastname",data.lastname);
+                            localStorage.setItem("email",data.email);
+                            localStorage.setItem("age",data.age);
+                            localStorage.setItem("address",data.address);
+                            localStorage.setItem("phonenumber",data.phonenumber);
+
+                            // $('#loaddata').html('Login Successful '+data.firstname+' '+data.lastname);
+                            // $('#loaddata').css('color','red');
+                            // $('#loaddata').css('font-size','50px');
+                            // $('#loaddata').css('text-align','center');
+                            window.location.href='home.html';
+                        }
+                        else
+                            // $('#loaddata').html('Invalid Email and Password');
+                            // $('#loaddata').css('color','red');
+                            // $('#loaddata').css('font-size','50px');
+                            // $('#loaddata').css('text-align','center');
+                            if(email.length!=0 && password.length!=0)
+                            {
+                                window.alert('Incorrect email id and password');
+                            }
+                    },
+                    error: function (data) {
+                        window.alert('Unable to send request.. invalid url');
+                        console.log('An error occurred.');
+                        console.log(data);
+                    },
+                    });
+                    return false;
+                });
+            });
+
+            </script>
+    </body>
+</html>

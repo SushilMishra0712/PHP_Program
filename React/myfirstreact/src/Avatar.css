@@ -1,0 +1,21 @@
+.avatarstyle{
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+}
+#submit{
+    margin: 40px;
+    width: 150px;
+    height: 55px;
+    font-size: 30px;
+    background: chocolate;
+    margin-left: 500px;
+}
+#submit:hover{
+    opacity: 0.8;
+}
+#welcome{
+    text-align: center;
+    font-size: 80px;
+    color: maroon;
+}

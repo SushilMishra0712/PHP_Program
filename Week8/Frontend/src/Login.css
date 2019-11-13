@@ -1,0 +1,61 @@
+.login-container{
+    border:2px solid lightskyblue;
+    padding: 16px;
+    color:black;
+    margin-left: 435px;
+    margin-right: 435px;
+    margin-top: 20px;
+    height: 372px;
+    border-radius: 8px;
+}
+.login-container label{
+    font-size: 20px;
+}
+#forgot-account{
+    color: blue;
+    font-size: 22px;
+}
+input[type=email], input[type=password]{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 40px,20px;
+    box-sizing: border-box;
+    border:2px solid silver;
+    font-size: 15px;
+}
+
+input[type=submit]{
+    background-color:lightseagreen;
+    box-shadow: silver;
+    border: 1px solid white;
+    width: 100%;
+    color:white;
+    height: 45px;
+    font-size: 30px;
+    padding: 5px 10px;
+}
+input[type=submit]:hover{
+    opacity: 0.8;
+   
+}
+
+.login-header{
+    text-align: center;
+    font-size: 40px;
+    color: #0040ff;
+}
+
+#forgot-account:hover{
+    opacity: 0.8;
+}
+
+#registration-button{
+    width: 160px;
+    height: 40px;
+    background: springgreen;
+    color: 1px solid black;
+    font-size: 20px;
+}
+#registration-button:hover{
+    opacity: 0.8;
+}

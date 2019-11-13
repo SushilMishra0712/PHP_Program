@@ -1,0 +1,47 @@
+.registration-container{
+    border:2px solid lightskyblue;
+    padding: 16px;
+    color:black;
+    margin-left: 435px;
+    margin-right: 435px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    height: 670px;
+    border-radius: 8px;
+}
+.registration-container label{
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+input[type=text],input[type=email], input[type=password],input[type=number]{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 40px,20px;
+    box-sizing: border-box;
+    border:2px solid silver;
+    font-size: 15px;
+}
+
+textarea{
+    width: 100%;
+    height: 70px;
+    padding: 15px 5px;
+    margin: 40px,0px;
+    box-sizing: border-box;
+    border:2px solid silver;
+    border-radius: 2px;
+    resize: none;
+}
+
+input[type=submit]{
+    background-color:#0080ff;
+    border: 1px solid white;
+    width: 100%;
+    color:white;
+    font-size: 30px;
+    padding: 0px 10px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    box-shadow: skyblue;
+}

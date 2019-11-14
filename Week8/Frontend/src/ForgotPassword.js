@@ -23,13 +23,13 @@ class ForgotPassword extends Component{
         try {
             let data={}
             data.email=(this.state.email);
-            const response = await axios.post('http://localhost:8080/index.php?r=site/forgot',data);
+            const response = await axios.post('http://localhost:8080/index.php/site/forgot',data);
             console.log('Returned data:', response);
             console.log('data:', response.data.firstname);
             console.log('statuscode', response.data.code);
             if(response.data.code===200)
             {
-                alert('Email exists in database');
+                alert('Reset password from your email');
             }
             else if(response.data.code===401)
             {

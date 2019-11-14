@@ -53,13 +53,13 @@ class Register extends Component{
             data.address=(this.state.address);
             data.phone_number=(this.state.phone_number);
 
-            const response = await axios.post('http://localhost:8080/index.php?r=site/register',data);
+            const response = await axios.post('http://localhost:8080/index.php/site/register',data);
             console.log('Returned data:', response);
             console.log('data:', response.data.firstname);
             console.log('statuscode', response.data.code);
             if(response.data.code===200)
             {
-                alert('Register Successful..\nPlease Login to Continue');
+                alert('Register Successful..Please Verify email');
                 this.sendRedirect();
             }
             else if(response.data.code===401 || response.data.code===500)

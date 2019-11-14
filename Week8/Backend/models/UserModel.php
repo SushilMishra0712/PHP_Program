@@ -66,6 +66,12 @@ class UserModel extends Login
        return $user;
     }
 
+    public function verifyUser($email){
+            Yii::$app->db->createCommand()
+            ->update('login', ['verified' => 1], ['email' => $email])
+            ->execute();
+    }
+
     public function checkEmail($email)
     {
         $user = (new \yii\db\Query())

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '../../vendor/autoload.php';
 use PhpAmqpLib\Connection\AMQPConnection;
  
 $connection = new AMQPConnection('localhost', 5672, 'guest', 'guest');
@@ -14,23 +14,23 @@ $callback = function($msg){
     echo " * Message received", "\n";
     $data = json_decode($msg->body, true);
  
-    $from = $data['from'];
-    $from_email = $data['from_email'];
-    $to_email = $data['to_email'];
-    $subject = $data['subject'];
-    $message = $data['message'];
+    $from = "From";
+    $from_email = "sushil08@gmail.com";
+    $to_email = $data['Email'];
+    $subject = $data['Subject'];
+    $message = $data['Body'];
  
-    $transporter = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-      ->setUsername('YOUR_GMAIL_EMAIL')
-      ->setPassword('YOUR_GMAIL_PASSWORD');
- 
-    $mailer = Swift_Mailer::newInstance($transporter);  
- 
-    $message = Swift_Message::newInstance($transporter)
-        ->setSubject($subject)
-        ->setFrom(array($from_email => $from))
-        ->setTo(array($to_email))
-        ->setBody($message);
+    $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
+    ->setUsername('sushilmishra07120712@gmail.com')
+    ->setPassword('sushil0712');
+
+$mailer = new Swift_Mailer($transport);
+
+$message =(new Swift_Message($transport))
+->setSubject($subject)
+->setFrom([$from_email => 'Bridgelabz'])
+->setTo([$to_email => 'Recipient'])
+->setBody($message, 'text/html');
  
     $mailer->send($message);
  

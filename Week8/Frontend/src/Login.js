@@ -34,7 +34,7 @@ class Login extends Component{
             data.email=(this.state.email);
             data.password=(this.state.password);
 
-            const response = await axios.post('http://localhost:8080/index.php?r=site/login',data);
+            const response = await axios.post('http://localhost:8080/index.php/site/login',data);
             console.log('Returned data:', response);
             console.log('data:', response.data.firstname);
             console.log('statuscode', response.data.code);

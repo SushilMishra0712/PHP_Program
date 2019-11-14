@@ -9,6 +9,7 @@ import Login from './Login';
 import Register from './Register';
 import ForgotPassword from './ForgotPassword';
 import Avatar from './Avatar';
+import ResetPassword from './ResetPassword';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/registration" component= {CreateAccount} />
       <Route path="/forgotpassword" component= {ForgotPassword} />
       <Route path="/avatar"  component= {Avatar} />
+      <Route path="/resetpassword"  component= {ResetPassword} />
       </Switch>
     </div>
     </BrowserRouter>

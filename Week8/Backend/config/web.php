@@ -52,14 +52,16 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
+            // 'showScriptName' => false,
             'rules' => [
+                'Verify'=>'site/verify',
+                'Verify/<email:\d+>'=>'Verify'
             ],
         ],
-        */
+        
         
     ],
     // 'defaultRoute' => 'site/view',

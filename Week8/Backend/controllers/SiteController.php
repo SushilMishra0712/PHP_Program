@@ -8,6 +8,7 @@ header('Access-Control-Max-Age: 86400');
 header('Content-Type: application/json');
 
 use Yii;
+use yii\helpers\Url;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -16,7 +17,8 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\LoginUserSearch;
 use app\models\UserModel;
-require_once '../models/RabbitMq.php';
+use app\models\RabbitMq;
+// require_once __DIR__.'../../models/RabbitMq.php';
 
 class SiteController extends Controller
 {
@@ -145,6 +147,19 @@ class SiteController extends Controller
                     ],
                 ]);
             }
+
+    }
+
+    /**
+     *  Register Verify action.
+     *
+     * @return Response|string
+     */
+    public function actionVerify($email)
+    {
+        echo "Verified email successfully :".$email;
+        $check = new UserModel();
+        $verified= $check->verifyUser($email);
     }
 
     /**
@@ -165,7 +180,11 @@ class SiteController extends Controller
             $data=json_encode($postdata);
            
             if($result)
-            {    
+            {  
+                $subject="Reset Password";
+                $body="Click here to Reset.. http://localhost:3000/resetpassword";
+                RabbitMq::addRabbit($email,$subject,$body);
+                
                 // Successfull response
                 return \Yii::createObject([
                     'class' => 'yii\web\Response',
@@ -218,12 +237,14 @@ class SiteController extends Controller
 
         $check = new UserModel();
         $result = $check->registerUser($firstname,$lastname,$email,$pass,$age,$address,$phonenumber);
+        $data=json_encode($postdata);
         
         if($result)
         {
             $subject="Verify Mail";
-            $body="";
+            $body="Click here to verify.. http://localhost:8080/index.php/Verify?email=`$email`";
             RabbitMq::addRabbit($email,$subject,$body);
+
             // Successfull response
             return \Yii::createObject([
                 'class' => 'yii\web\Response',
